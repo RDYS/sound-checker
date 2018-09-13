@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sounds Checker</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/creative.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    .ct-chart{
+      width: 1200px;
+      height: 400px;
+    }
+    canvas {/*background-image:url(img/grid50.gif); border-left:1px solid #E6E6E6; border-bottom:1px solid #E6E6E6;*/
+                border:1px solid #E6E6E6;}
+    </style>
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Check Sounds</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <a class="page-scroll" href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#charts">Charts</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#login">Login</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+                <br>
+                <hr>
+                <p>Sound check, for class!!</p>
+                <a href="#portfolio" class="btn btn-primary btn-xl page-scroll">chart</a>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">At Service</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-volume-up text-primary sr-icons"></i>
+                        <h3>Measure Sounds</h3>
+                        <p class="text-muted">Our website shows decibel</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-server text-primary sr-icons"></i>
+                        <h3>Get Values</h3>
+                        <p class="text-muted">Get values from arduino</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-line-chart text-primary sr-icons"></i>
+                        <h3>Draw Charts</h3>
+                        <p class="text-muted">Our website measures sounds and shows charts</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-pencil text-primary sr-icons"></i>
+                        <h3>Concentrate Study</h3>
+                        <p class="text-muted">Our website can help you to study hard!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- charts -->
+
+    <section class="no-padding bg-primary" id="charts">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <h1 style="font-weight:bold;"class="section-heading soundcolor">Sound Charts</h1>
+              </div>
+          </div>
+      </div>
+      <div class="ct-chart"> <!-- chart/////////////////////////////////////////////////////////////////// -->
+      </div>
+      <div class="container">
+        <input name="id" type="email" class="form-control" id="ip" placeholder="IP">
+        <button onclick="addchart();">그래프 등록</button>
+        <button onclick="removechart();">그래프 제거</button>
+      </div>
+    </section>
+
+    <section id="login" class="parallax-section">
+    	<div class="container">
+    		<div class="row">
+
+    			<div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="0.6s">
+    				<h2>Login Here</h2>
+    				<h3>Login please</h3>
+    				<p>그래프는 로그인 후 볼 수 있습니다. 로그인은 선생님들만 가능합니다.</p>
+    			</div>
+    			<div class="wow fadeInUp col-md-5 col-sm-5" data-wow-delay="1s">
+    				<!-- <form id="login" method="post"> -->
+              <br>  <br>
+    					<input name="id" type="email" class="form-control" id="id" placeholder="ID">
+              <br>
+    					<input name="pwd" type="password" class="form-control" id="pwd" placeholder="PASSWORD">
+    					<div class="col-md-offset-6 col-md-6 col-sm-offset-1 col-sm-10">
+    						<input name="submit" type="submit" class="form-control" id="submit" value="LOGIN">
+    					</div>
+    				<!-- </form> -->
+    			</div>
+
+    			<div class="col-md-1"></div>
+
+    		</div>
+    	</div>
+    </section>
+
+    <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2 chartset="utf-8">한국디지털미디어고등학교</h2>
+                <a href="http://www.dimigo.hs.kr" class="btn btn-default btn-xl sr-button">Website</a>
+            </div>
+        </div>
+    </aside>
+
+
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Let's Check Sounds!</h2>
+                    <hr class="primary">
+                    <!-- <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p> -->
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <i class="fa fa-phone fa-3x sr-contact"></i>
+                    <p>031-363-7800</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                    <p><a href="mailto:your-email@your-domain.com">dimigo@dimigo.hs.kr</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script>
+    var data1 = new Array();
+    var data2 = new Array();
+    var date = new Array();
+    var a=0;
+    var cnt=0;
+    var datecnt=0;
+    var txtip;
+    hi();
+
+    function addchart(){
+        a=1;
+        var textip = document.getElementById("ip").value;
+        console.log(textip);
+        txtip= textip;
+    }
+    function removechart(){
+      a=0;
+    }
+
+    function hi(){
+      cnt++;
+      console.log(a);
+      $.get('http://192.168.43.169',function(data){
+        if(data==null) data=55;
+        console.log(data);
+
+        var text= "[";
+        var datetext="";
+        var insertchart = "";
+        if(a==1){
+          $.get('http://'+txtip,function(data1){
+            if(data1==null) data1=60;
+            for(var i=1; i<=99; i++){
+              insertchart = insertchart.concat("data2[cnt-",100-i,"],");
+            }
+            insertchart = insertchart.concat("data2[cnt]");
+            data= Math.floor(Math.random() * 1000);//
+            data2[cnt]= data1;//
+            console.log("data2[cnt]=> "+data2[cnt]);
+
+          });
+        }
+        for(var i=1; i<=99; i++){
+          text = text.concat("data1[cnt-",100-i,"],");
+          if(i%10==0){
+            datecnt++;
+            datetext = datetext.concat("date[datecnt-",100-i,"],");
+          }
+          else{
+            datetext = datetext.concat("null,");
+          }
+        }
+        text = text.concat("data1[cnt]]");
+        datetext = datetext.concat("date[cnt]");
+
+        //data= Math.floor(Math.random() * 1000);//
+        data1[cnt]= data;//
+
+        date[cnt]=String(new Date()).split(" ")[4];
+        if(cnt<=90) date[cnt-90]=null;
+
+
+        var datavalue={
+          labels: [],
+          //labels: [eval(datetext)],
+          series: [eval(text),[],[],[],[],[data2[cnt-99],data2[cnt-98],data2[cnt-97],data2[cnt-96],data2[cnt-95],data2[cnt-94],data2[cnt-93],data2[cnt-92],data2[cnt-91],data2[cnt-90],data2[cnt-89],data2[cnt-88],data2[cnt-87],data2[cnt-86],data2[cnt-85],data2[cnt-84],data2[cnt-83],data2[cnt-82],data2[cnt-81],data2[cnt-80],data2[cnt-79],data2[cnt-78],data2[cnt-77],data2[cnt-76],data2[cnt-75],data2[cnt-74],data2[cnt-73],data2[cnt-72],data2[cnt-71],data2[cnt-70],data2[cnt-69],data2[cnt-68],data2[cnt-67],data2[cnt-66],data2[cnt-65],data2[cnt-64],data2[cnt-63],data2[cnt-62],data2[cnt-61],data2[cnt-60],data2[cnt-59],data2[cnt-58],data2[cnt-57],data2[cnt-56],data2[cnt-55],data2[cnt-54],data2[cnt-53],data2[cnt-52],data2[cnt-51],data2[cnt-50],data2[cnt-49],data2[cnt-48],data2[cnt-47],data2[cnt-46],data2[cnt-45],data2[cnt-44],data2[cnt-43],data2[cnt-42],data2[cnt-41],data2[cnt-40],data2[cnt-39],data2[cnt-38],data2[cnt-37],data2[cnt-36],data2[cnt-35],data2[cnt-34],data2[cnt-33],data2[cnt-32],data2[cnt-31],data2[cnt-30],data2[cnt-29],data2[cnt-28],data2[cnt-27],data2[cnt-26],data2[cnt-25],data2[cnt-24],data2[cnt-23],data2[cnt-22],data2[cnt-21],data2[cnt-20],data2[cnt-19],data2[cnt-18],data2[cnt-17],data2[cnt-16],data2[cnt-15],data2[cnt-14],data2[cnt-13],data2[cnt-12],data2[cnt-11],data2[cnt-10],data2[cnt-9],data2[cnt-8],data2[cnt-7],data2[cnt-6],data2[cnt-5],data2[cnt-4],data2[cnt-3],data2[cnt-2],data2[cnt-1],data2[cnt]]]        //
+        };
+        var options = {
+          high: 300,
+          low: -300,
+          axisX: {
+            labelInterpolationFnc: function(value, index) {
+              return index % 2 === 0 ? value : null;
+            }
+          }
+        };
+        new Chartist.Line('.ct-chart', datavalue, options);
+        // new Chartist.Line('.ct-chart', data2, {
+        //   fullWidth: true,
+        //   chartPadding: {
+        //     right: 40
+        //   }
+        // });
+
+
+    });
+    setTimeout(function() { hi(); }, 300);
+
+    }
+
+    </script>
+
+    <script src="js/creative.min.js"></script>
+
+</body>
+
+</html>
